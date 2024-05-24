@@ -1,4 +1,4 @@
-import {divide, sum, multiply} from './math';
+import {divide, sum, multiply} from '../math';
 
 describe('math', () => {
     describe.skip('divide', () => {

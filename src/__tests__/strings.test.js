@@ -1,4 +1,4 @@
-import {toUpper, toLower, len} from './strings';
+import {toUpper, toLower, len} from '../strings';
 
 describe('toUpper', () => {
   it('should convert to upper case', () => {
