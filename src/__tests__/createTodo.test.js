@@ -32,6 +32,19 @@ describe('createTodo', () => {
     it('should throw an error from fn when response is not ok',
         async () => {
             fetch.mockResolvedValueOnce({ok: false});
-            await expect(createTodoOnServer('Todo 2')).rejects.toThrowError();
-        })
+            const funFn = () => createTodoOnServer('Todo 2');
+            await expect(funFn).rejects.toThrow('Failed to create todo');
+        }
+    );
+    it('should throw an error from fn when no valid title is provided',
+        (done) => {
+            try {
+                createTodo('');
+                done('createTodo should throw an error from fn when no valid title is provided');
+            } catch (err) {
+                expect(err.message).toBe('Failed to create todo not Title');
+                done();
+            }
+        }
+    )
 });

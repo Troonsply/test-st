@@ -1,7 +1,8 @@
 import {v4} from 'uuid';
-import axios from "axios";
 
 export function createTodo(title) {
+    if (!title) throw new Error('Failed to create todo not Title');
+
     return {
         id: v4(),
         title,
