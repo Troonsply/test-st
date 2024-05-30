@@ -10,7 +10,8 @@ const config = {
             lines: 80,
             statements: 80
         }
-    }
+    },
+    testMatch: ['**/*.test.js?(x)']
 };
 
 module.exports = config;
